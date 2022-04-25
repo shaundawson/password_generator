@@ -6,12 +6,24 @@ symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
 
 print("Welcome to the PyPassword Generator")
 nr_letters = input("How many letters would you like in your password?\n")
+if int(nr_letters) > 52:
+  print("You can only choose up to 52 letters.")
+  nr_letters = input("How many letters would you like in your password?\n")
+
 nr_symbols = input("How many symbols would you like?\n")
+if int(nr_symbols) > 9:
+  print("You can only choose 9 symbols")
+  nr_symbols = input("How many symbols would you like?\n")
+  
 nr_numbers = input("How many numbers would you like?\n")
+if int(nr_numbers) > 10:
+  print("You can only choose 9 numbers")
+  nr_numbers = input("How many numbers would you like?\n")
 
 #Order not randomised:
 #e.g. 4 letter, 2 symbol, 2 number = JduE&!91
 #Iterate through letters and choose number of characters based on nr_letters
+
 for l in range(0,len(letters)):
   letters = random.sample(letters,int(nr_letters))
 pw_letters = "".join(letters)

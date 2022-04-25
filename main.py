@@ -8,7 +8,6 @@ print("Welcome to the PyPassword Generator")
 nr_letters = input("How many letters would you like in your password?\n")
 nr_symbols = input("How many symbols would you like?\n")
 nr_numbers = input("How many numbers would you like?\n")
-new_password = ""
 
 #Order not randomised:
 #e.g. 4 letter, 2 symbol, 2 number = JduE&!91
@@ -25,9 +24,11 @@ for n in range(0,len(numbers)):
   numbers = random.sample(numbers,int(nr_numbers))
 pw_numbers = "".join(numbers)
 
-print(f"Here is your new password: {pw_letters}{pw_symbols}{pw_numbers} ")
-
+p = pw_letters+pw_symbols+pw_numbers
+# print(p)
 
 
 #Order of characters randomised:
 #e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
+new_pw = ''.join(random.sample(p,len(p)))
+print(f"Here is your new password: {new_pw}")

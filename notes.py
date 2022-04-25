@@ -71,8 +71,22 @@
 
 # ADDING EVENS EXERCISE
 #Write a program that calculates the sum of all the even numbers from 1 to 100. Thus, the first even number would be 2 and the last one is 100. i.e. 2 + 4 + 6 + 8 +10 ... + 98 + 100
-sum_even = 0
-for number in range(2,101,2):
-  #print(number)
-  sum_even += number
-print(sum_even)
+# sum_even = 0
+# for number in range(2,101,2):
+#   sum_even += number
+# print(sum_even)
+
+
+# FIZZBUZZ EXERCISE ** TOP INTERVIEW QUESTION
+for number in range(1,101):
+  if number % 3 == 0 and number % 5 == 0:
+    number = "FizzBuzz"
+    print(str(number))
+  elif number % 3 == 0:
+    number = "Fizz"
+    print(str(number))
+  elif number % 5 == 0:
+    number = "Buzz"
+    print(str(number))
+  else:
+    print(str(number))

@@ -62,8 +62,17 @@
 
 
 # FOR LOOPS AND THE RANGE() FUNCTION
-total = 0
-for number in range(1, 101):
-  total += number
-print(total)
-  
+# total = 0
+# for number in range(1, 101):
+#   total += number
+# print(total)
+
+
+
+# ADDING EVENS EXERCISE
+#Write a program that calculates the sum of all the even numbers from 1 to 100. Thus, the first even number would be 2 and the last one is 100. i.e. 2 + 4 + 6 + 8 +10 ... + 98 + 100
+sum_even = 0
+for number in range(2,101,2):
+  #print(number)
+  sum_even += number
+print(sum_even)

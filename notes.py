@@ -45,9 +45,16 @@ print(student_scores)
 
 # Replicate how max works ()
 #Initialize the max value to the first element.
-max_score = student_scores[0]
+# max_score = student_scores[0]
 # Iterate through the list, and if we find a larger value than the current max, we assign that value to max
+# for score in student_scores:
+#   if score > max_score:
+#     max_score = score
+# print(f"The highest score in the class is: {max_score}")
+
+# another solution
+highest_score = 0
 for score in student_scores:
-  if score > max_score:
-    max_score = score
-print(f"The highest score in the class is: {max_score}")
+  if score > highest_score:
+    highest_score = score
+print(f"The highest score in the class is: {highest_score}")

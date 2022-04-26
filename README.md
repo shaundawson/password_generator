@@ -1,2 +1,9 @@
 # password_generator
- day 5: for loops, range and code blocks
+A random password generating program which generates a password mix of upper and lowercase letters, as well as numbers and symbols.
+
+
+
+Resources
+Check whether personal data has been compromised by data breaches
+ https://haveibeenpwned.com/
+

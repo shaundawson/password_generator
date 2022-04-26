@@ -5,42 +5,27 @@ numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
 
 print("Welcome to the PyPassword Generator")
-nr_letters = input("How many letters would you like in your password?\n")
-if int(nr_letters) > 52:
-  print("You can only choose up to 52 letters.")
-  nr_letters = input("How many letters would you like in your password?\n")
+nr_letters = int(input("How many letters would you like in your password?\n"))
+nr_symbols = int(input("How many symbols would you like?\n"))
+nr_numbers = int(input("How many numbers would you like?\n"))
 
-nr_symbols = input("How many symbols would you like?\n")
-if int(nr_symbols) > 9:
-  print("You can only choose 9 symbols")
-  nr_symbols = input("How many symbols would you like?\n")
-  
-nr_numbers = input("How many numbers would you like?\n")
-if int(nr_numbers) > 10:
-  print("You can only choose 9 numbers")
-  nr_numbers = input("How many numbers would you like?\n")
+#store empty pw string
+password = ""
 
-#Order not randomised:
-#e.g. 4 letter, 2 symbol, 2 number = JduE&!91
-#Iterate through letters and choose number of characters based on nr_letters
+# loop through all of the characters, generate a range based on user input
+for char in range(1, nr_letters + 1):
+  #generate random letter for each position
+  random_char = random.choice(letters)
+  # add random character to pw
+  password += random_char
 
-for l in range(0,len(letters)):
-  letters = random.sample(letters,int(nr_letters))
-pw_letters = "".join(letters)
-#Iterate through symbols and choose number of symbols based on nr_symbols
-for s in range(0,len(symbols)):
-  symbols = random.sample(symbols,int(nr_symbols))
-pw_symbols = "".join(symbols)
-#Iterate through numbers and choose number of numbers based on nr_numbers
-for n in range(0,len(numbers)):
-  numbers = random.sample(numbers,int(nr_numbers))
-pw_numbers = "".join(numbers)
+for char in range(1, nr_symbols + 1):
+  random_sym = random.choice(symbols)
+  password += random_sym
 
-p = pw_letters+pw_symbols+pw_numbers
-# print(p)
+for char in range(1, nr_numbers + 1):
+  random_num = random.choice(numbers)
+  password += random_num
+print(password)
 
-
-#Order of characters randomised:
-#e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
-new_pw = ''.join(random.sample(p,len(p)))
-print(f"Here is your new password: {new_pw}")
+print(f"Here is your new password: {password}")

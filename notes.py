@@ -171,12 +171,35 @@
 
 
 # FIZZBUZZ EXERCISE ** TOP INTERVIEW QUESTION
-for number in range(1,101):
-  if number % 3 == 0 and number % 5 == 0:
-    print("FizzBuzz")
-  elif number % 3 == 0:
-    print("Fizz")
-  elif number % 5 == 0:
-    print("Buzz")
-  else:
-    print(number)
+# for number in range(1,101):
+#   if number % 3 == 0 and number % 5 == 0:
+#     print("FizzBuzz")
+#   elif number % 3 == 0:
+#     print("Fizz")
+#   elif number % 5 == 0:
+#     print("Buzz")
+#   else:
+#     print(number)
+
+
+
+# EASY LEVEL - PW GENERATOR
+#store empty pw string
+password = ""
+
+# loop through all of the characters, generate a range based on user input
+for char in range(1, nr_letters + 1):
+  #generate random letter for each position
+  random_char = random.choice(letters)
+  # add random character to pw
+  password += random_char
+
+for char in range(1, nr_symbols + 1):
+  random_sym = random.choice(symbols)
+  password += random_sym
+
+for char in range(1, nr_numbers + 1):
+  random_num = random.choice(numbers)
+  password += random_num
+
+print(f"Here is your new password: {password}")
